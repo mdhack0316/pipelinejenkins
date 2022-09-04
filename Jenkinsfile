@@ -5,7 +5,7 @@ agent any
 stages { 
 	stage('SCM') { 
 		steps  {  
-			echo "Git Is Pulling My Code" 
+			git branch: 'main', url: 'https://github.com/mdhack0316/pipelinejenkins' 
 			}
 		}
 
