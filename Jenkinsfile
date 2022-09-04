@@ -5,7 +5,7 @@ agent any
 stages { 
 	stage('SCM') { 
 		steps  {  
-			git branch: 'main', url: 'https://github.com/mdhack0316/pipelinejenkins' 
+			git branch: 'main', url: 'https://github.com/mdhack0316/javamavenapp' 
 			}
 		}
 
