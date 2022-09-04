@@ -1,8 +1,6 @@
 pipeline  {
 
-agent {
-		label "mayank"
-}
+agent any
 
 stages { 
 	stage('SCM') { 
