@@ -1,25 +1,22 @@
-pipeline  {
-
-agent any
-
-stages { 
-	stage('SCM') { 
-		steps  {  
-			git branch: 'main', url: 'https://github.com/mdhack0316/javamavenapp' 
-			}
-		}
-
-	stage('Build') { 
-		steps  { 
-				sh 'mvn clean package'
-			}
-		}
-	stage('Test') {
-		steps  { 
-		echo "Testing The Code"
-
-		}
-	}
-}
-
+pipeline {
+    agent any 
+    stages {
+        stage('gitcode Download') {
+            steps {
+                git branch: 'main', url: 'https://github.com/mdhack0316/javamavenapp'
+            }
+        }
+        stage('Build Using Maven') {
+            steps {
+                sh 'mvn clean package'
+            }    
+        }
+        stage('Testing Code') { 
+            steps {
+                sh 'java -jar target/*.jar'
+            }
+        }
+        stage('Building Dockerfile')
+       
+    }
 }
